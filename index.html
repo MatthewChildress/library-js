@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Chilly's Book Library</title>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <h2>Chilly's Library Repository</h2>
+        </header>
+        <main></main>
+        <footer>&#169 Amy Says So</footer>
+        <button id="formBtn">+</button>
+        <div class="form-modal" id="formModal">
+            <form>
+                <span class="close-modal">&times;</span>
+                <p>Add a New Book</p>
+                <label for="book-title">Book Title</label><br>
+                <input type="text" id="bookTitle" name="book-title" value="Book Title"><br>
+                <label for="author">Author</label><br>
+                <input type="text" id="author" name="author" value="Book Author"><br>
+                <label for="pages">Page Numbers</label><br>
+                <input type="number" id="pages" name="pages" min="1" max="1500">
+                <div class="read-toggle">
+                    <p>Read it?</p>
+                    <label class="toggle">
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="buttons">
+                    <input type="submit" value="Add Book">
+                    <input type="reset" value="Clear Fields">
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="script.js" defer></script>
+</body>
+</html>
