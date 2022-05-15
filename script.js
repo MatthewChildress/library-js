@@ -5,23 +5,68 @@
 // each card needs a button to change it's "read" status
 // - this button should use Book function's protoype inheritence
 
+const modal = document.getElementById("formModal");
+const formBtn = document.getElementById("formBtn");
+const closeBtn = document.getElementsByClassName("close-modal")[0];
+
 let myLibrary = [];
 
-function Book() {
-  // the constructor...
+class Book {
+  constructor (
+    title = 'The Crystal Shard',
+    author = 'R.A.Salvatore',
+    pages = '336',
+    read = true
+  ) {
+    this.id = ++cardId
+    this.title = title
+    this.author = author
+    this.pages = pages
+    this.read = read
+
+  }
 }
 
 function addBookToLibrary() {
   // do stuff here
+  //boolean to see if book is in array, if not. add
+
+  myLibrary.push(this)
 }
 
+function addBookCard() {
+  //whole lotta appendChild
+  const card = document.createElement("div");
+  const cardTitle = document.createElement("p");
+  const cardPages = document.createElement("p");
+  const cardRead = document.createElement("p");
+  const cardClose = document.createElement("span");
+  cardClose.addEventListener("click", cardDelete)
+  main.appendChild(card).className = 'card';
+  card.setAttribute('id', [i + 1]);
+  card.appendChild(cardTitle).className = 'card-title';
+  card.appendChild(cardPages).className = 'card-pages';
+  card.appendChild(cardRead).className = 'card-read';
+  card.appendChild(cardClose).className = 'card-close';
 
+  
+}
 
+function newBookInput() {
+  const title = document.getElementbyId("bookTitle").value
+  const author = document.getElementById("author").value
+  const pages = document.getElementById("pages").value
+  return new Book(title, author, pages)
 
+}
 
-const modal = document.getElementById("formModal");
-const formBtn = document.getElementById("formBtn");
-const closeBtn = document.getElementsByClassName("close-modal")[0];
+function cardDelete() {
+  // uses close span in card to delete card
+}
+
+function bookCheck() {
+  // gives error saying book is in library 
+}
 
 formBtn.addEventListener("click", () => {
     modal.style.display = "block";
