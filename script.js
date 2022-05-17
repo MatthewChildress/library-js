@@ -7,15 +7,37 @@
 
 let myLibrary = [];
 
-function Book() {
-  // the constructor...
+function Book(title, author, pages, read) {
+  this.title = title
+  this.author = author
+  this.pages = pages
+  this.read = read
+  myLibrary.push(this)
 }
 
 function addBookToLibrary() {
-  // do stuff here
+  let card = document.createElement("div");
+  let cardTitle = document.createElement("h2");
+  let cardAuthor = document.createElement("h3");
+  let cardPages = document.createElement("h3");
+  let cardRead = document.createElement("h3");
+  let cardClose = document.createElement("span");
+  cardClose.addEventListener("click", cardDelete)
+  main.appendChild(card).className = "card";
+  card.appendChild(cardClose).className = "card-close";
+  card.appendChild(cardTitle).className = "card-title";
+  card.appendChild(cardAuthor).className = "card-author";
+  card.appendChild(cardPages).className = "card-pages";
+  card.appendChild(cardRead).className = "card-read";
+  cardRead.appendChild(cardCheck).className = "card-check";
+  cardRead.appendChild(cardSlider).className = "card-slider"; 
+  card.setAttribute('id', myLibrary.length);
 }
 
-
+function cardDelete () {
+  card.remove()
+  myLibrary.splice()
+}
 
 
 
