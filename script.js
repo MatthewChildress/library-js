@@ -5,8 +5,13 @@
 // each card needs a button to change it's "read" status
 // - this button should use Book function's protoype inheritence
 
+const modal = document.getElementById("formModal");
+const formBtn = document.getElementById("formBtn");
+const closeBtn = document.getElementsByClassName("close-modal")[0];
+
 let myLibrary = [];
 
+<<<<<<< HEAD
 function Book(title, author, pages, read) {
   this.title = title
   this.author = author
@@ -37,13 +42,64 @@ function addBookToLibrary() {
 function cardDelete () {
   card.remove()
   myLibrary.splice()
+=======
+class Book {
+  constructor (
+    title = 'The Crystal Shard',
+    author = 'R.A.Salvatore',
+    pages = '336',
+    read = true
+  ) {
+    this.id = ++cardId
+    this.title = title
+    this.author = author
+    this.pages = pages
+    this.read = read
+
+  }
 }
 
+function addBookToLibrary() {
+  // do stuff here
+  //boolean to see if book is in array, if not. add
 
+  myLibrary.push(this)
+}
 
-const modal = document.getElementById("formModal");
-const formBtn = document.getElementById("formBtn");
-const closeBtn = document.getElementsByClassName("close-modal")[0];
+function addBookCard() {
+  //whole lotta appendChild
+  const card = document.createElement("div");
+  const cardTitle = document.createElement("p");
+  const cardPages = document.createElement("p");
+  const cardRead = document.createElement("p");
+  const cardClose = document.createElement("span");
+  cardClose.addEventListener("click", cardDelete)
+  main.appendChild(card).className = 'card';
+  card.setAttribute('id', [i + 1]);
+  card.appendChild(cardTitle).className = 'card-title';
+  card.appendChild(cardPages).className = 'card-pages';
+  card.appendChild(cardRead).className = 'card-read';
+  card.appendChild(cardClose).className = 'card-close';
+
+  
+>>>>>>> c7a12671facacdcfd9dab9be3c54b255ff097c79
+}
+
+function newBookInput() {
+  const title = document.getElementbyId("bookTitle").value
+  const author = document.getElementById("author").value
+  const pages = document.getElementById("pages").value
+  return new Book(title, author, pages)
+
+}
+
+function cardDelete() {
+  // uses close span in card to delete card
+}
+
+function bookCheck() {
+  // gives error saying book is in library 
+}
 
 formBtn.addEventListener("click", () => {
     modal.style.display = "block";
