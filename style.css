@@ -12,6 +12,8 @@ body {
     background:linear-gradient(to top, rgba(200,111,111,0.8), rgba(241, 174, 174, 0.9));
     border: 2px solid rgb(255,251,246);
     box-shadow: 0 0 1em 0.4em rgb(255,251,246);
+    display:grid;
+    grid-template-rows: 1fr 4fr 0.25fr;
 
 }
 
@@ -21,6 +23,18 @@ header {
     color:rgb(255,251,246);
     display:flex;
     justify-content:center;
+}
+
+main {
+    width:auto;
+    display:grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.card {
+    background:rgb(255,251,246);
+    box-shadow: 0 0 1em 0.1em;
 }
 
 .form-modal {
